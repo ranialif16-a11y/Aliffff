@@ -187,25 +187,13 @@
         return;
       }
 
-      try {
-  // GANTI URL DI BAWAH INI DENGAN LINK RAW JSON KAMU DI GITHUB
-  const response = await fetch('https://raw.githubusercontent.com/ranialif16-a11y/AliftzyRaw/main/AliftzyRaw.json');
-  const users = await response.json();
-
-  const match = users.find(user => user.username === username && user.password === password);
-
-  if (match) {
-    successMsg.textContent = 'Login berhasil! Mengalihkan...';
-    setTimeout(() => {
-      window.location.href = 'https://ranialif16-a11y.github.io/Alif-web-prposal/';
-    }, 1500);
-  } else {
-    errorMsg.textContent = 'hahaha lu gak ada akses buat log in izin dulu sono ke alif😗';
-  }
-} catch (err) {
-  errorMsg.textContent = 'Gagal mengambil data dari GitHub.';
-}
-
+      if (username === 'aliff' && password === '230408') {
+        successMsg.textContent = 'Login berhasil! Mengalihkan...';
+        errorMsg.textContent = '';
+        window.location.href = 'https://ranialif16-a11y.github.io/Alif-web-prposal/';
+      } else {
+        errorMsg.textContent = 'Username atau password salah.';
+      }
     });
 
     const music = document.getElementById('bg-music');
